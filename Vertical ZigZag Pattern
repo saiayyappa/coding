@@ -1,0 +1,71 @@
+/*
+Vertical ZigZag ­ C Columns
+Accept two integers as the input. The program must print the vertical zigzag pattern as given in the Example Input/Output Section.
+Boundary Condition(s):
+2 <= R, C <= 50
+Input Format:
+The first line contains the value of R and C separated by space(s).
+Output Format:
+The first R lines contain the vertical zigzag pattern.
+Example Input/Output 1:
+Input:
+5 5
+Output:
+1 10 11 20 21
+2 9 12 19 22
+3 8 13 18 23
+4 7 14 17 24
+5 6 15 16 25
+Example Input/Output 2:
+Input:
+2 3
+Output:
+1 4 5
+2 3 6
+
+
+*/
+#include <iostream>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int r,c,a[1000][1000],n=1,i,j,b=0,k=1,d;
+    cin>>r>>c;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            cin>>a[i][j];
+        }
+    }
+    for(j=0;j<c;j++)
+    {
+        for(i=0;i<r;i++)
+        {
+            if(j%2==0)
+            {
+            a[i][j]=n;
+            n++;
+            }
+            
+            if(j%2==1)
+            {
+                
+               a[i][j]=n-1;
+               n--;
+            }
+        }
+        n=n+r;
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            cout<<a[i][j]<<" ";
+        }
+        cout<<"\n";    }
+
+
+}
