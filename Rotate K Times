@@ -30,7 +30,35 @@ Input:
 Output:
 45 6 67 78 89 90 12 23 34
 */
+/*
+IN C
 
+#include<stdio.h>
+#include <stdlib.h>
+#include<math.h>
+int main()
+{
+long int i,j,n,m,a[1000],s;
+scanf("%ld",&n);
+for(i=0;i<n;i++)
+{
+    scanf("%ld",&a[i]);
+}
+scanf("%ld",&m);
+s=m%n;
+s=abs(s-n);
+for(i=s;i<n;i++)
+{
+    printf("%ld ",a[i]);
+}
+for(i=0;i<s;i++)
+{
+    printf("%ld ",a[i]);
+}
+
+}
+
+*/
 #include <iostream>
 #include<math.h>
 #include<stdlib.h>
