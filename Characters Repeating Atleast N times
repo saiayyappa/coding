@@ -1,0 +1,62 @@
+/*
+Characters Repeating Atleast N times
+The program must accept a string S and an integer N as input. The program must print the characters repeating consecutively at least N times
+as the output.
+Boundary Condition(s):
+2 <= Length of String S <= 100
+1 <= N <= 10
+Input Format:
+The first line contains the value of string S.
+The second line contains the value of N.
+Output Format:
+The first line contains the characters repeating consecutively at least N times.
+Example Input/Output 1:
+Input:
+aabccbhhhh
+2
+Output:
+ach
+Example Input/Output 2:
+Input:
+aaaabbcccbb
+3
+Output:
+ac
+
+
+*/
+
+#include <iostream>
+#include<cstring>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+char a[1000];
+int i,j,n,m,c=1;
+cin>>a;
+cin>>m;
+n=strlen(a);
+for(i=0;i<n-1;i++)
+{
+    if(a[i]==a[i+1])
+    {
+        c++;
+    }
+    if(a[i]!=a[i+1])
+    {
+       
+        if(c>=m)
+        {
+            cout<<a[i];
+        }
+         c=1;
+    }
+}
+if(c>=m)
+{
+    cout<<a[i];
+}
+
+
+}
