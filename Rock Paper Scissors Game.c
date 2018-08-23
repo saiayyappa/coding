@@ -46,6 +46,44 @@ paper rock
 rock paper
 Output:
 Tie*/
+/*
+
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int main()
+{ 
+    int n,i,c=0,m=0,d,e;
+    char a[100][10],b[100][10]; 
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%10s%10s",a[i],b[i]);
+    for(i=0;i<n;i++)
+    {
+        d=strlen(a[i]);
+        e=strlen(b[i]);
+        if((d==4) && (e==5))
+        m=m+1;
+        else if((d==4) && (e==8))
+        c=c+1;
+        else if((d==5) && (e==8))
+        m=m+1;
+        else if((d==5) && (e==4))
+        c=c+1;
+        else if((d==8) && (e==4))
+        m=m+1;
+        else if((d==8) && (e==5))
+        c=c+1;
+    }
+    if(c<m)
+    printf("2");
+    else if(m<c)
+    printf("1");
+    else
+    printf("Tie");
+    return 0;
+    }*/
+
 
 #include <stdio.h>
 
