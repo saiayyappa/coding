@@ -1,0 +1,67 @@
+Rotate Matrix in Clockwise Direction
+The program must accept an integer matrix of size NxN as the input. The program must rotate the given matrix in the clockwise direction.
+Finally, the program must print the modified matrix.
+Boundary Condition(s):
+2 <= N <= 20
+Input Format:
+The first line contains the value of N.
+The next N lines contain N integers separated by space(s).
+Output Format:
+The first N lines contain N integers of the modified matrix separated by space(s).
+Example Input/Output 1:
+Input:
+5
+1 2 3 4 5
+6 7 8 9 10
+23 45 67 89 45
+12 23 45 67 78
+11 12 13 14 15
+Output:
+11 12 23 6 1
+12 23 45 7 2
+13 45 67 8 3
+14 67 89 9 4
+15 78 45 10 5
+Example Input/Output 2:
+Input:
+7
+11 12 13 14 15 16 67
+12 23 34 45 56 67 45
+23 34 45 56 67 78 45
+34 45 56 67 78 89 65
+45 56 67 78 89 90 12
+12 23 34 45 56 76 34
+23 34 45 56 67 89 45
+Output:
+23 12 45 34 23 12 11
+34 23 56 45 34 23 12
+45 34 67 56 45 34 13
+56 45 78 67 56 45 14
+67 56 89 78 67 56 15
+89 76 90 89 78 67 16
+45 34 12 65 45 45 67
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h> 
+int main()
+{
+    long int a[1000][1000],n,i,j;
+    scanf("%ld",&n);
+    for(i=0;i<n;i++) 
+    {
+        for(j=0;j<n;j++)
+        scanf("%ld",&a[i][j]);
+        }
+        for(j=0;j<n;j++)
+        {
+            for(i=n-1;i>=0;i--) 
+            {
+                printf("%ld ",a[i][j]);
+                }
+                printf("\n"); 
+        }
+        } 
