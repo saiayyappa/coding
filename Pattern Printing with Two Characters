@@ -1,0 +1,66 @@
+Pattern Printing with Two Characters
+The program must accept an integer N and two characters as input. The program must print the desired pattern as shown in the Example
+Input/Output section.
+Boundary Condition(s):
+1 <= N <= 50
+Input Format:
+The first line contains the value of N followed by a space and then the two characters(without any space between the two characters).
+Output Format:
+The first N lines contain the desired pattern as shown in the Example Input/Output section.
+Example Input/Output 1:
+Input:
+5 $#
+Output:
+    $
+   #$#
+  $#$#$
+ #$#$#$#
+$#$#$#$#$
+Example Input/Output 2:
+Input:
+6 @%
+Output:
+     @
+    %@%
+   @%@%@
+  %@%@%@%
+ @%@%@%@%@
+%@%@%@%@%@%
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char a[1000],b[1000000];
+    long int n,i,j,k=0;
+    scanf("%ld",&n);
+    scanf("%s",a);
+    for(i=0;i<(n*n);i++)
+    {
+        if(i%2==0)
+        b[i]=a[0];
+        else
+        b[i]=a[1];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<(2*n);j++)
+        {
+            if(j>=(n-i) && j<=n)
+            {
+            printf("%c",b[k]);
+            k++;
+            }
+            else if(j<=(n+i) && j>=n)
+            {
+            printf("%c",b[k]);
+            k++;
+            }
+            else
+            printf(" ");
+        }
+       printf("\n");
+    }
+}
