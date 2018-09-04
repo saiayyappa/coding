@@ -1,0 +1,63 @@
+Nth term in Mixed Geometric Series
+The program must accept an integer N as the input. The program must print the N term in the series as the
+output.
+NOTE : The order of series must be 1, 1, 2, 3, 4, 9, 8, 27, 16, 81, 32, 243, 64, 729, 128, 2187, 256, 6561, 512, 19683,
+... This series is a mixture of 2 series - all the odd terms in this series form a geometric series and all the even terms
+form another geometric series. 
+Boundary Condition(s):
+1 <= N <= 30
+Input Format:
+The first line contains the value of N .
+Output Format:
+The first line contains the N term in the series.
+Example Input/Output 1:
+Input:
+3
+Output:
+2
+Example Input/Output 2:
+Input:
+21
+Output:
+1024
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+#include<math.h>
+int main()
+{
+    int i,k=0,n,a[1000];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        a[k]=pow(2,i);
+        k++;
+        a[k]=pow(3,i);
+        k++;
+    }
+    printf("%d",a[(n-1)]);
+}
+
+
+
+#include <stdio.h>
+#include<math.h>
+int main()
+{
+    int n,c,m;
+    scanf("%d",&n);
+    m=(n-1)/2;
+    if(n%2==0)
+    {
+        c=pow(3,m);
+    printf("%d",c);
+    }
+    else
+    {
+       c=pow(2,m);
+    printf("%d",c);
+    }
+    return 0;
+}
