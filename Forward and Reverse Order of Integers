@@ -42,3 +42,17 @@ int main()
     for(j=y;j>=z;j--)
     printf("%d ",j);
 }
+
+
+
+a=[]
+a=list(map(int,input().strip().split(" ")))
+x,y,z=a[0],a[1],a[2]
+if x>z:
+    t=z
+    z=x
+    x=t
+for i in range(x,z+1):
+    print(i,end=' ')
+for j in range(y,z-1,-1):
+    print(j,end=' ')
