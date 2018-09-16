@@ -1,0 +1,73 @@
+Rotate Every N Elements for K Times
+The program must accept an integer array of size M and two integers N and K as the input. The program must rotate every N elements (in anticlockwise
+direction) in the array for K times. If the last part of the array contains less than N elements then rotate the remaining element left at
+the last for K times. Finally, the program must print the modified array as the output.
+Boundary Condition(s):
+1 <= M <= 100
+1 <= N <= N
+1 <= K <= 99999
+Input Format:
+The first line contains the value of M.
+The second line contains M integers separated by space(s).
+The third line contains the values of N and K separated by a space.
+Output Format:
+The first line contains the modified array integers separated by space(s).
+Example Input/Output 1:
+Input:
+10
+71 65 74 88 63 100 45 35 67 11
+4 1
+Output:
+65 74 88 71 100 45 35 63 11 67
+Explanation:
+71 65 74 88 63 100 45 35 67 11
+Here every 4 elements must be rotated 1 time.
+71 65 74 88 is rotated as  65 74 88 71
+63 100 45 35 is rotated as  100 45 35 63
+The last part of the array do not have 4 elements so the remaining elements must be rotated 1 time.
+So 67 11 is rotated as 11 67
+Example Input/Output 2:
+Input:
+9
+98 40 55 61 43 30 3 65 61
+3 4
+Output:
+40 55 98 43 30 61 65 61 3
+
+
+#include <stdio.h>
+int main()
+{
+    int n,i,j,t,a[10000000],x,k,c=0,r=0,e=0,d,b,f;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    scanf("%d%d",&x,&k);
+    b=n%x;
+    f=n/x;
+    if(b==0)
+    d=n/x;
+    else
+    d=(n/x)+1;
+    while(r<d)
+    {
+        c=0;
+    while(c<k)
+    {
+    t=a[e];
+    if(r<f)
+    x=x;
+    else
+    x=x-b;
+    for(i=e;i<e+x;i++)
+    a[i]=a[i+1];
+    a[e+x-1]=t;
+    c++;
+    }
+    r++;
+    e=e+x;
+    }
+    for(i=0;i<n;i++)
+    printf("%d ",a[i]);
+    return 0;
+}
