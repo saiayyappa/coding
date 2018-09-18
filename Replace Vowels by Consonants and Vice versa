@@ -1,0 +1,52 @@
+Replace Vowels by Consonants and Vice versa
+The program must accept a string S as the input. The program must replace every vowel in the string S by the next consonant (alphabetical
+order) and replace every consonant in the string S by the next vowel (alphabetical order). Finally, the program must print the modified string as
+the output.
+Note: All the alphabets in the string S must be in lower case.
+Boundary Condition(s):
+1 <= Length of S <= 100
+Input Format:
+The first line contains the value of string S.
+Output Format:
+The first line contains the modified string.
+Example Input/Output 1:
+Input:
+orange
+Output:
+puboif
+Example Input/Output 2:
+Input:
+mergesort
+Output:
+ofuifupuu
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int main()
+{
+    int n,i;
+    char a[1000],j;
+    scanf("%s",&a);
+    n=strlen(a);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]=='a' || a[i]=='e' || a[i]=='i'|| a[i]=='o' || a[i]=='u')
+            printf("%c",a[i]+1);
+        else if(a[i]<'u')
+        {
+          for(j=a[i];j<='z';j++)
+          {
+              if(j=='a' || j=='e' || j=='i' || j=='o' || j=='u')
+              {
+                  printf("%c",j);
+                  break;
+              }
+          }
+        }
+          else
+          printf("a");
+    }
+}
