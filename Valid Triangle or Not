@@ -1,0 +1,59 @@
+Valid Triangle or Not
+The program must accept three angles X, Y and Z as the input. The program must check if the lines with given angles form a valid triangle or not
+and print 'Valid triangle' if it is valid. Else the program must print 'Not a valid triangle' as the output.
+Boundary Condition(s):
+0 <= X, Y, Z <= 180
+Input Format:
+The first line contains the values of X, Y and Z separated by a space.
+Output Format:
+The first line contains either 'Valid triangle' or ' Not a valid triangle.
+Example Input/Output 1:
+Input:
+60 60 60
+Output:
+Valid triangle
+Example Input/Output 2:
+Input:
+90 0 90
+Output:
+Not a valid triangle
+
+
+
+
+import java.util.*;
+public class Hello
+{
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        int a=s.nextInt();
+        int b=s.nextInt();
+        int c=s.nextInt();
+        if(a+b+c==180 && a!=0 && b!=0 && c!=0)
+        System.out.println("Valid triangle");
+        else
+        System.out.println("Not a valid triangle");
+	}
+}
+
+
+
+a,b,c=map(int,input().split())
+if a+b+c==180 and a!=0 and b!=0 and c!=0:
+    print("Valid triangle")
+else:
+    print("Not a valid triangle")
+
+
+
+#include<stdio.h>
+int main()
+{
+    int a,b,c;
+    scanf("%d %d %d",&a,&b,&c);
+    if(a+b+c==180 && a!=0 && b!=0 && c!=0)
+    printf("Valid triangle");
+    else
+    printf("Not a valid triangle");
+}
