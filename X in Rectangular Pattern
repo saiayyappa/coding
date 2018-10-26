@@ -1,0 +1,108 @@
+X in Rectangular Pattern
+The program must accept an integer N as the input. The program must print the pattern as shown in the Example Input/Output sections.
+Boundary Condition(s):
+5 <= N <= 50
+Input Format:
+The first line contains the value of N.
+Output Format:
+The first N lines contain the desired pattern as shown in the Example Input/Output sections.
+Example Input/Output 1:
+Input:
+15
+Output:
+***************
+**-----------**
+*-*---------*-*
+*--*-------*--*
+*---*-----*---*
+*----*---*----*
+*-----*-*-----*
+*------*------*
+*-----*-*-----*
+*----*---*----*
+*---*-----*---*
+*--*-------*--*
+*-*---------*-*
+**-----------**
+***************
+Example Input/Output 2:
+Input:
+20
+Output:
+********************
+**----------------**
+*-*--------------*-*
+*--*------------*--*
+*---*----------*---*
+*----*--------*----*
+*-----*------*-----*
+*------*----*------*
+*-------*--*-------*
+*--------**--------*
+*--------**--------*
+*-------*--*-------*
+*------*----*------*
+*-----*------*-----*
+*----*--------*----*
+*---*----------*---*
+*--*------------*--*
+*-*--------------*-*
+**----------------**
+********************
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        int i,j;
+        int n=s.nextInt();
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                if(i==0 || j==0 || i==n-1 || j==n-1 || i==j || j==n-1-i)
+                System.out.print("*");
+                else
+                System.out.print("-");
+            }
+            System.out.println();
+        }
+	}
+}
+
+
+
+n=int(input())
+for i in range(n):
+    for j in range(n):
+        if i==0 or j==0 or i==n-1 or j==n-1 or i==j or j==n-1-i:
+            print("*",end="")
+        else:
+            print("-",end="")
+    print("\n")
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int i,j,n;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(i==0 || j==0 || i==n-1 || j==n-1 || i==j || j==n-1-i)
+            printf("*");
+            else
+            printf("-");
+        }
+        printf("\n");
+    }
+    return 0;
+}
