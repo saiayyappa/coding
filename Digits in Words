@@ -1,0 +1,68 @@
+Digits in Words
+The program must accept an integer N as the input. The program must print the corresponding words separated by space(s) for each digit in N
+as the output. The words must be printed as given below,
+0 - zero
+1 - one
+2 - two
+3 - three
+4 - four
+5 - five
+6 - six
+7 - seven
+8 - eight
+9 - nine
+Boundary Condition(s):
+1 <= N <= 10^9
+Input Format:
+The first line contains the value of N.
+Output Format:
+The first line contains the words separated by space(s).
+Example Input/Output 1:
+Input:
+100
+Output:
+one zero zero
+Example Input/Output 2:
+Input:
+3892
+Output:
+three eight nine two
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int i=0,j,a[1000],n;
+    scanf("%d",&n);
+    while(n>0)
+    {
+        a[i]=n%10;
+        i++;
+        n/=10;
+    }
+    for(j=i-1;j>=0;j--){
+        if(a[j]==0)
+        printf("zero");
+        else if(a[j]==1)
+        printf("one");
+        else if(a[j]==2)
+        printf("two");
+        else if(a[j]==3)
+        printf("three");
+        else if(a[j]==4)
+        printf("four");
+        else if(a[j]==5)
+        printf("five");
+        else if(a[j]==6)
+        printf("six");
+        else if(a[j]==7)
+        printf("seven");
+        else if(a[j]==8)
+        printf("eight");
+        else if(a[j]==9)
+        printf("nine");
+        printf(" ");
+    }
+}
