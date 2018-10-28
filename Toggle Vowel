@@ -1,0 +1,53 @@
+Toggle Vowel
+A string S containing only alphabets is passed as the input to the program. The program must toggle the case of vowels at odd positions and
+print the string.
+Boundary Condition(s):
+1 <= Length of S <= 1000
+Input Format:
+The first line contains the String S.
+Output Format:
+The first line contains the string with vowels toggled at the odd positions.
+Example Input/Output 1:
+Input:
+cool
+Ouput:
+coOl
+Explanation :
+vowel 'o' in 3rd position is toggled.
+Example Input/Output 2:
+Input:
+URANIUM
+Ouput:
+uRaNiUM
+Explanation :
+vowels 'U' is in 1st , 'A' is in 3rd and 'I' is in 5th positions are toggled.
+
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char a[1000];
+    scanf("%s",a);
+    int i;
+    int n=strlen(a);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]=='a'||a[i]=='e'||a[i]=='i'||a[i]=='o'||a[i]=='u')
+        {
+            a[i]=toupper(a[i]);
+        }
+        else if(a[i]=='A'||a[i]=='E'||a[i]=='I'||a[i]=='O'||a[i]=='U')
+        {
+            a[i]=tolower(a[i]);
+        }
+       // printf("%c",a[i]);
+        i++;
+    }
+    printf("%s",a);
+
+
+}
