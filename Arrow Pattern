@@ -1,0 +1,56 @@
+Arrow Pattern
+The program must accept an integer N as the input. The program must print the desired pattern as shown in the Example Input/Output
+sections.
+Boundary Condition(s):
+2 <= N <= 50
+Input Format:
+The first line contains the integer value of N.
+Output Format:
+The list of lines contain the desired pattern as shown in the Example Input/Output sections.
+Example Input/Output 1:
+Input:
+4
+Output:
+***0
+**00
+*0*0
+0**0
+*0*0
+**00
+***0
+Example Input/Output 2:
+Input:
+5
+Output:
+****0
+***00
+**0*0
+*0**0
+0***0
+*0**0
+**0*0
+***00
+****0
+ SkillRack
+A
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    for(i=0;i<2*n-1;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(j==n-1 || j==n-i-1 || j==i-n+1)
+            printf("0");
+            else
+            printf("*");
+        }
+        printf("\n");
+    }
+}
