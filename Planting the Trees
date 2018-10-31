@@ -1,0 +1,67 @@
+Planting the Trees
+There is a long flowerbed in which some of the plots are planted and some are not planted. Flowers cannot be planted in adjacent plots. The
+program must accept an array of size N consisting of only 0's (representing not planted) and 1's (representing planted) and an integer K
+representing the number of plants to be planted as the input. The program must print Yes if K number of plants can be planted in the flowerbed.
+Else the program must print No as the output.
+Boundary Condition(s):
+1 <= N <= 50000
+1 <= K <= 1000
+Input Format:
+The first line contains the value of N and K separated by a space.
+The second line contains N integers separated by space(s).
+Output Format:
+The first line contains either Yes or No.
+Example Input/Output 1:
+Input:
+5 1
+1 0 0 0 1
+Output:
+Yes
+Explanation:
+The elements of the array are 1 0 0 0 1 and K is 1
+The first plot is already planted.
+The second plot cannot be planted as it's left adjacent plot (first plot) is already planted.
+In the third plot, the required plant can be planted as the adjacent plots are not planted.
+Hence the output is Yes
+Example Input/Output 2:
+Input:
+5 2
+1 0 0 0 1
+Output:
+No
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int i,a[100000],n,k;
+    scanf("%d %d",&n,&k);
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==0 && a[i-1]==0 && a[i+1]==0 && i+1<n && i-1>=0)
+        {
+        a[i]=1;
+        k--;
+        }
+        else if(i-1<0 && a[i]==0 && a[i+1]==0)
+        {
+        k--;
+        a[i]=1;
+        }
+        else if(i+1>=n && a[i]==0 && a[i-1]==0)
+        {
+        k--;
+        a[i]=1;
+        }
+    }
+    if(k<1)
+    printf("Yes");
+    else
+    printf("No");
+    return 0;
+}
