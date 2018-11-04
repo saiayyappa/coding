@@ -1,0 +1,38 @@
+Unique Integers (Error Identification)
+The program must accept N integers as the input. The program must print YES if all the integers are unique. Else the program must print NO as
+the output.
+Example Input/Output 1:
+Input:
+5
+9 0 1 83 839
+Output:
+YES
+Example Input/Output 2:
+Input:
+4
+8 7 10 8
+Output:
+NO
+
+
+
+#include<stdio.h>
+int main()
+{
+    int n,a[1000],i,f=0,j;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        for(j=0;j<i;j++)
+        {
+            if(a[i]==a[j])
+                f=1;
+        }
+    }
+    if(f==1)
+    printf("NO");
+    else
+    printf("YES");
+    return 0;
+}
