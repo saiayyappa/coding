@@ -1,0 +1,50 @@
+program thats print yes if the given number is divisible by 8 or the last three digit is rearranged so that it
+can be divisible by 8.else print no
+input:
+12004
+output:
+Yes
+12004 id not divisible by 8.because 12400 is divisible so Yes is printed
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i=0,t=0,a[100000],m,s=0,j,k,f=0;
+    scanf("%d",&n);
+    if(n%8==0)
+    printf("Yes");
+    else
+    { t=n;
+        while(t>0)
+        {
+            a[i]=t%10;
+            i++;
+            t/=10;
+        }
+    m=i;
+    for(j=0;j<5;j++)
+    {
+    for(i=0;i<3;i++)
+    {
+        s=0;
+        t=a[i];
+        a[i]=a[i+1];
+        a[i+1]=t;
+        for(k=m-1;k>=0;k--)
+        s=s*10+a[k];
+        if(s%8==0)
+        {
+            printf("Yes");
+            f=1;
+            break;
+        }
+    }
+    if(f==1)
+    break;
+    }
+    }
+    if(f==0)
+    printf("No");
+}
