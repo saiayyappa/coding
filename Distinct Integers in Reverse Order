@@ -1,0 +1,33 @@
+Distinct Integers in Reverse Order
+The program must accept N integers as the input. The program must print only the distinct values ignoring the repetition of the values but in
+the reverse order.
+Boundary Condition(s):
+2 <= N <= 100
+Input Format:
+The first line contains N.
+The second line contains the N integer values separated by a space.
+Output Format:
+The distinct integer values in the reverse order of occurrence as the input sequence.
+Example Input/Output 1:
+Input:
+6
+10 20 20 30 40 10
+Output:
+10 40 30 20
+Example Input/Output 2:
+Input:
+4
+63 48 57 28
+Output:
+28 57 48 63
+
+
+
+n=int(input())
+a=list(map(int,input().split()))
+a.reverse()
+b=[]
+for i in a:
+    if i not in b:
+        print(i)
+        b.append(i)
