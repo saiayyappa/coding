@@ -1,0 +1,52 @@
+Odd/Even Frequency Alphabets
+The program must accept a string S as the input. The program must print the alphabets in the string S which have occurred odd number of times
+in the alphabetical order. Then the program must print the alphabets in the string S which have occurred even number of times in the reversed
+alphabetical order.
+Note: The alphabets in S are always in lowercase.
+Boundary Condition(s):
+1 <= Length of S <= 10000
+Input Format:
+The first line contains the string S.
+Output Format:
+The first line contains the alphabets in the string S based on the conditions mentioned above.
+Example Input/Output 1:
+Input:
+bananaleaf
+Output:
+beflna
+Explanation:
+The alphabet b has occurred 1 time.
+The alphabet a has occurred 4 times.
+The alphabet n has occurred 2 times.
+The alphabet l has occurred 1 time.
+The alphabet e has occurred 1 time.
+The alphabet f has occurred 1 time.
+The alphabets b l e f have occurred odd number of times. So they are printed in alphabetical order as befl
+The alphabets a n have occurred even number of times. So they are printed in reversed alphabetical order as na
+Hence the output is beflna
+Example Input/Output 2:
+Input:
+engineeringmathematics
+Output:
+chinrstmgea
+
+
+
+a,t=list(input()),0
+b=[]
+c=[]
+d=[]
+a.sort()
+for i in a:
+    if i not in b:
+        c.append(a.count(i))
+        b.append(i)
+for i in c:
+    if i%2==1:
+        print(b[t],end="")
+    else:
+        d.append(b[t])
+    t+=1
+d.sort(reverse=True)
+for i in d:
+    print(i,end="")
