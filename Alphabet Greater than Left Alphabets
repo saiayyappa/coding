@@ -1,0 +1,27 @@
+Alphabet Greater than Left Alphabets (Error Identification)
+The program must accept a string S as the input. The program must print the alphabets only if the current alphabet is greater than all the
+alphabets in the left as the output.
+There are logical errors in the program and hence it does not print the desired output.  Rectify the logical errors so that the program prints the
+expected output.
+Note : Alphabets are only in lower-case.
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    char str[100000], lastPrinted;
+    scanf("%[^\n]s",str);
+    printf("%c",str[0]);
+    lastPrinted=str[0];
+    for(int index=1 ; str[index]!='\0'; index++)
+    {
+        if(str[index]>lastPrinted)
+        {
+            lastPrinted=str[index];
+            printf("%c",lastPrinted);
+        }
+    }
+    return 0;
+}
